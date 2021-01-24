@@ -1,26 +1,13 @@
-import java.util.Scanner;
-
 public class Sort {
 
-    public int[] createArray() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj rozmiar tablicy: ");
-        int[] array = new int[scanner.nextInt()];
-        for (int i = 0; i < array.length; i++) {
-            System.out.println("Podaj " + (i + 1) + " liczbę: ");
-            array[i] = scanner.nextInt();
-        }
-        return array;
-    }
-
     public void sortArray(int[] array) {
-        int tmp;
-        for (int i = 1; i < array.length; i++) {
-            if (array[i - 1] > array[i]) {
-                tmp = array[i - 1];
-                array[i - 1] = array[i];
-                array[i] = tmp;
-                i = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    int tmp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = tmp;
+                }
             }
         }
     }
